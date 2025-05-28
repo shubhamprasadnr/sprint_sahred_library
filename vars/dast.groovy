@@ -1,2 +1,3 @@
-def call()
+def call() {
 echo "shubham"
+}
