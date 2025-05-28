@@ -1,5 +1,4 @@
 def call(){
-   steps {
                 sh """
                     zaproxy -cmd \
                     -port 8090 \
@@ -7,5 +6,4 @@ def call(){
                     -quickout ${WORKSPACE}/zap-report.html \
                     -quickprogress
                     """
-            }
 }
