@@ -1,4 +1,4 @@
-def ('SonarQube Scan') {
+def call() {
             steps {
                 withSonarQubeEnv('sonarqube') {
                     withCredentials([string(credentialsId: 'sonarcred', variable: 'SONARQUBE_TOKEN')]) {
