@@ -6,7 +6,7 @@ class SonarScanner implements Serializable {
 
     def call(String sonarKey, String sonarUrl, String sonarToken) {
         steps.echo "Running SonarQube analysis..."
-        steps.withSonarQubeEnv('SonarQube') {
+        steps.withSonarQubeEnv('soanr') {
             steps.sh """
                 sonar-scanner \
                     -Dsonar.projectKey=${sonarKey} \
