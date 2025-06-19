@@ -13,11 +13,11 @@ class SonarScanner implements Serializable {
             steps.withSonarQubeEnv('sonar') {
                 steps.sh """
                     sonar-scanner \\
-                        -Dsonar.projectKey=${sonarKey} \\
-                        -Dsonar.sources=. \\
-                        -Dsonar.host.url=${sonarUrl} \\
-                        -Dsonar.login=${steps.env.SONAR_TOKEN}
-                         -Dsonar.java.binaries=target/classes
+                          -Dsonar.projectKey=''' + sonarKey + ''' \
+                        -Dsonar.sources=. \
+                        -Dsonar.host.url=''' + sonarUrl + ''' \
+                        -Dsonar.login=$SONAR_TOKEN \
+                        -Dsonar.java.binaries=target/classes
                 """
             }
         }
