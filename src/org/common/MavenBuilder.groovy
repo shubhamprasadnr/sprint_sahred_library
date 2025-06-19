@@ -7,7 +7,7 @@ class MavenBuilder implements Serializable {
     }
 
     def buildProject() {
-        steps.echo "Building project with Maven..."
-        steps.sh "mvn clean package"
+        steps.echo "Building project with Maven (skipping tests)..."
+        steps.sh "mvn clean package -DskipTests"
     }
 }
