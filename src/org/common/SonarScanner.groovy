@@ -17,6 +17,7 @@ class SonarScanner implements Serializable {
                         -Dsonar.sources=. \\
                         -Dsonar.host.url=${sonarUrl} \\
                         -Dsonar.login=${steps.env.SONAR_TOKEN}
+                         -Dsonar.java.binaries=target/classes
                 """
             }
         }
